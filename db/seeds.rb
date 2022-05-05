@@ -12,7 +12,7 @@ movies = Movie.create([{
                          release_date: '11/10/2022',
                          created_at: '11/10/2022' ,
                          updated_at: '11/10/2022'
-                       },
+                       }, 
                        {
                          title: 'The Lord of the Rings: The Fellowship of the Ring',
                          rating: 'PG',
