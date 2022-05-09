@@ -13,7 +13,6 @@ movies = Movie.create([{
                          created_at: '11/10/2022' ,
                          updated_at: '11/10/2022',
                          director: 'Pete Docter'
-
                        },
                        {
                          title: 'The Lord of the Rings: The Fellowship of the Ring',
