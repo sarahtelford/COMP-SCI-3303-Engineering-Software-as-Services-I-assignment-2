@@ -1,11 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
-  # Only allow a list of trusted parameters through.
-  def movie_params
-    params.require(:movie).permit(:title, :rating, :description, :release_date, :director)
-  end
-
   # GET /movies or /movies.json
   def index
     @all_ratings = Movie.all_ratings
@@ -75,6 +70,11 @@ class MoviesController < ApplicationController
     def set_movie
       @movie = Movie.find(params[:id])
     end
+
+  # Only allow a list of trusted parameters through.
+  def movie_params
+    params.require(:movie).permit(:title, :rating, :description, :release_date, :director)
+  end
 
 
 end
