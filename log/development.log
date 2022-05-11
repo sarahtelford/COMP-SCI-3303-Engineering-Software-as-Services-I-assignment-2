@@ -1372,3 +1372,223 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.7ms | Allocations: 15186)
 
 
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-09 12:03:01 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:19:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 5609)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 12743)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.4ms | Allocations: 14685)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-11 16:07:01 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:19:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 9889)
+Completed 200 OK in 30ms (Views: 24.2ms | ActiveRecord: 1.3ms | Allocations: 10969)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-11 16:34:13 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:19:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 5628)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 12762)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 0.7ms | Allocations: 14706)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2022-05-11 16:34:17 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 332)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-11 16:34:17 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 9888)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.4ms | Allocations: 10373)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2022-05-11 16:34:17 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-11 16:34:17 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 9769)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.3ms | Allocations: 10252)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2022-05-11 16:34:18 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-11 16:34:18 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 9774)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.4ms | Allocations: 10258)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2022-05-11 16:34:19 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-11 16:34:19 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 9888)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.4ms | Allocations: 10372)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2022-05-11 16:34:20 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-11 16:34:20 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 9883)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.4ms | Allocations: 10366)
+
+
+Started GET "/movies?sort=release_date" for 127.0.0.1 at 2022-05-11 16:34:23 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=release_date
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=release_date" for 127.0.0.1 at 2022-05-11 16:34:23 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"release_date"}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY release_date[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 9769)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.4ms | Allocations: 10252)
+
+
+Started GET "/movies?sort=release_date" for 127.0.0.1 at 2022-05-11 16:34:23 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=release_date
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=release_date" for 127.0.0.1 at 2022-05-11 16:34:23 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"release_date"}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY release_date[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 9866)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.4ms | Allocations: 10350)
+
+
+Started GET "/movies?sort=release_date" for 127.0.0.1 at 2022-05-11 16:34:25 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=release_date
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=release_date" for 127.0.0.1 at 2022-05-11 16:34:25 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"release_date"}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY release_date[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 9868)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.4ms | Allocations: 10352)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=release_date" for 127.0.0.1 at 2022-05-11 16:54:44 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"release_date"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:19:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY release_date[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 9789)
+Completed 200 OK in 42ms (Views: 33.3ms | ActiveRecord: 1.4ms | Allocations: 10866)
+
+
