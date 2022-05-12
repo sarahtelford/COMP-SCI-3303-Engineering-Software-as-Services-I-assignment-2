@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
     else
       @movies = Movie.where(rating: @ratings).order(@sort)
     end
-  end
+  end 
 
   # GET /movies/1 or /movies/1.json
   def show

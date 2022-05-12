@@ -3255,3 +3255,18 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.3ms | Allocations: 10243)
 
 
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R&sort=title" for 127.0.0.1 at 2022-05-12 09:21:20 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"], "sort"=>"title"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 9758)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.9ms | Allocations: 10836)
+
+
