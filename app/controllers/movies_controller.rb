@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
     else
       @movies = Movie.where(rating: @ratings).order(@sort)
     end
-  end 
+  end
 
   # GET /movies/1 or /movies/1.json
   def show
@@ -73,7 +73,7 @@ class MoviesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def movie_params
-    params.require(:movie).permit(:title, :rating, :description, :release_date, :director)
+    params.require(:movies).permit(:title, :rating, :description, :release_date, :director)
   end
 
 

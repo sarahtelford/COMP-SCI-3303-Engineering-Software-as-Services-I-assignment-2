@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-11T18:05:02+09:30">2022-05-11T18:05:02+09:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-16T10:04:41+09:30">2022-05-16T10:04:41+09:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -39,7 +39,7 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>23</b> files in total.
+    <b>24</b> files in total.
   </div>
 
   <div class="t-line-summary">
@@ -302,13 +302,24 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#24ec28b8cea24b029ccf4553e34e80de9b267bd6" class="src_link" title="spec/models/movie_spec.rb">spec/models/movie_spec.rb</a></td>
+            <td class="strong t-file__name"><a href="#4d8efe1041202fa501288930d235276df20ca07c" class="src_link" title="spec/controllers/movies_controllers_spec.rb">spec/controllers/movies_controllers_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">8</td>
             <td class="cell--number">4</td>
             <td class="cell--number">4</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#24ec28b8cea24b029ccf4553e34e80de9b267bd6" class="src_link" title="spec/models/movie_spec.rb">spec/models/movie_spec.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">0.00</td>
             
           </tr>
         
@@ -1251,7 +1262,7 @@
 
             
 
-            <code class="ruby">    params.require(:movie).permit(:title, :rating, :description, :release_date, :director)</code>
+            <code class="ruby">    params.require(:movies).permit(:title, :rating, :description, :release_date, :director)</code>
           </li>
         </div>
       
@@ -4368,9 +4379,9 @@
 </div>
 
       
-        <div class="source_table" id="24ec28b8cea24b029ccf4553e34e80de9b267bd6">
+        <div class="source_table" id="4d8efe1041202fa501288930d235276df20ca07c">
   <div class="header">
-    <h3>spec/models/movie_spec.rb</h3>
+    <h3>spec/controllers/movies_controllers_spec.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -4434,7 +4445,7 @@
 
             
 
-            <code class="ruby">    it &#39;should check director field exists&#39; do</code>
+            <code class="ruby">  it &#39;should check director field exists&#39; do</code>
           </li>
         </div>
       
@@ -4445,7 +4456,7 @@
 
             
 
-            <code class="ruby">      Movie.should respond_to?(:director)</code>
+            <code class="ruby">    Movie.should exist(:director)</code>
           </li>
         </div>
       
@@ -4456,7 +4467,7 @@
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4481,6 +4492,37 @@
             <code class="ruby">end</code>
           </li>
         </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="24ec28b8cea24b029ccf4553e34e80de9b267bd6">
+  <div class="header">
+    <h3>spec/models/movie_spec.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>0</b> relevant lines.
+      <span class="green"><b>0</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
       
     </ol>
   </pre>

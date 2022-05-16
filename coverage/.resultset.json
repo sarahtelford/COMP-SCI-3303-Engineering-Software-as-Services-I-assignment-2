@@ -6,7 +6,7 @@
   },
   "RSpec": {
     "coverage": {
-      "/Users/sarahtelford/RubymineProjects/assign2/spec/models/movie_spec.rb": {
+      "/Users/sarahtelford/RubymineProjects/assign2/spec/controllers/movies_controllers_spec.rb": {
         "lines": [
           1,
           null,
@@ -461,6 +461,11 @@
           null
         ]
       },
+      "/Users/sarahtelford/RubymineProjects/assign2/spec/models/movie_spec.rb": {
+        "lines": [
+
+        ]
+      },
       "/Users/sarahtelford/RubymineProjects/assign2/app/models/movie.rb": {
         "lines": [
           1,
@@ -478,6 +483,6 @@
         ]
       }
     },
-    "timestamp": 1652258102
+    "timestamp": 1652661281
   }
 }
