@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe MoviesController do
-  it 'should check director field exists' do
-    Movie.should exist(:director)
+  describe 'check director field exists' do
+    expect(Movie.new()).to respond_to(:director)
   end
-
 end
+
+
