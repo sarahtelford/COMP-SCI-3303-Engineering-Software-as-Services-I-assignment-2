@@ -3,6 +3,8 @@
 </h1>
 
 <%= render 'form', movie: @movie %>
+<%= form_tag movie_path(@movie), :method => :put do %>
+<%= label :movie, :director, 'Director', :class => 'col-form-label' %>
 
 <div class="ui basic buttons">
   <%= link_to movies_path, class: "ui button" do %>
@@ -12,3 +14,5 @@
     <i class="eye"></i> Show
   <% end %>
 </div>
+
+<% end %>
