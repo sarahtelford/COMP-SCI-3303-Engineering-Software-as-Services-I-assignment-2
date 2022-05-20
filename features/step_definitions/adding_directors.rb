@@ -14,14 +14,11 @@ When(/^I press the edit page for "([^"]*)"$/) do |title|
 end
 
 Then(/^I fill in Director with "([^"]*)"$/) do |name|
-  fill_in 'director', with: name
-end
-
-And(/^I press "Update Movie"$/) do
-  click_button 'Update movie'
+  fill_in 'Director', with: name
+  click_button 'Update Movie'
 end
 
 Then(/^the director of "([^"]*)" should be "([^"]*)"$/) do |title, director|
-  expect(Movie.find_by_title(title).director).to eq director
+  expect(page).to have_content(director)
 end
 

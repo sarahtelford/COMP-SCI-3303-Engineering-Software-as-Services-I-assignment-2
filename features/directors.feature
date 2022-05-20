@@ -26,14 +26,12 @@ Feature: Search for Movies by Director
       Given I am on the home page
       When I press the edit page for "Spirited Away"
       Then I fill in Director with "Hayao Miyazaki"
-      And  I press "Update Movie"
       Then the director of "Spirited Away" should be "Hayao Miyazaki"
 
     Scenario: I want to find a movie with the same director as Spirited Away
       Given I am on the details page for "Spirited Away"
       When  I click "Find Movies With Same Director"
-      Then  I should be on the Similar Movies page
-      And   I should see "Howels Moving Castle"
+      Then  I should see "Howels Moving Castle"
       But   I should not see "Nightmare on elm street"
 
     Scenario: cant find a movie with the same director (SAD)

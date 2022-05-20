@@ -3,11 +3,11 @@ Given(/^I am on the details page for "Spirited Away"$/) do
 end
 
 When(/^I click "([^"]*)"$/) do |button|
-  click_button 'Find Same Director'
+  movie_path(Movie.find_by_title($1))
 end
 
 Then(/^I should be on the Similar Movies page"$/) do
-  visit '/movies/9/similar_movies'
+  visit '/movies/9/search'
 end
 
 And(/^I should see "([^"]*)"$/) do |title|
