@@ -2,8 +2,8 @@ Given(/^I am on the details page for "Spirited Away"$/) do
   visit '/movies/9'
 end
 
-When(/^I click "([^"]*)"$/) do |button|
-  movie_path(Movie.find_by_title($1))
+When(/^I click Find Similar Movies$/) do
+  click_button 'Find Similar Movies'
 end
 
 Then(/^I should be on the Similar Movies page"$/) do
@@ -11,12 +11,12 @@ Then(/^I should be on the Similar Movies page"$/) do
 end
 
 And(/^I should see "([^"]*)"$/) do |title|
-  expect(page).to have_content(movies)
   expect(page).to have_content(title)
+  expect(page).to have_content("Howels Moving Castle")
 end
 
 But(/^I should not see "([^"]*)"$/) do |title|
-  expect(page).to have_content(movies)
-  expect(page).not_to have_content(title)
+  expect(page).not.to have_content(title)
+  expect(page).not_to have_content("Nightmare on elm street")
 end
 

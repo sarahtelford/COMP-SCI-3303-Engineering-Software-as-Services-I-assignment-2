@@ -10,7 +10,7 @@ describe MoviesController do
       get :search, { title: 'Spirited Away' }
     end
 
-  it "should redirect to home page if no director is known" do
+  it 'Should redirect to home page if no director is known' do
     allow(Movie).to receive(:similar_movies).with('No name').and_return(nil)
     get :search, { title: 'No name' }
     expect(response).to redirect_to(root_url)
