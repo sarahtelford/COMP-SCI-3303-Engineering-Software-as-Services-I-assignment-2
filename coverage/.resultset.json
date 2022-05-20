@@ -12,8 +12,7 @@
           null,
           1,
           1,
-          0,
-          0,
+          1,
           null,
           null,
           null,
@@ -403,14 +402,6 @@
           0,
           null,
           null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
           null,
           1,
           null,
@@ -473,6 +464,11 @@
           null
         ]
       },
+      "/Users/sarahtelford/RubymineProjects/assign2/spec/models/movie_spec.rb": {
+        "lines": [
+
+        ]
+      },
       "/Users/sarahtelford/RubymineProjects/assign2/app/models/movie.rb": {
         "lines": [
           1,
@@ -492,13 +488,8 @@
           1,
           null
         ]
-      },
-      "/Users/sarahtelford/RubymineProjects/assign2/spec/models/movie_spec.rb": {
-        "lines": [
-
-        ]
       }
     },
-    "timestamp": 1653024983
+    "timestamp": 1653025471
   }
 }

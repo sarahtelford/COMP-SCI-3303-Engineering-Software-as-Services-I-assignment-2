@@ -15,6 +15,14 @@ class MoviesController < ApplicationController
     end
   end
 
+  def search
+    @similar_movies = Movie.find_by_title(params[:title])
+    if @similar_movies.nil?
+      redirect_to root_url, alert: "'#{params[:title]}' has no director info"
+    end
+    @movie = Movie.find_by(title: params[:title])
+  end
+
   # GET /movies/1 or /movies/1.json
   def show
   end
@@ -22,14 +30,6 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
-  end
-
-  def search
-    @similar_movies = Movie.similar_movies(params[:title])
-    if @similar_movies.nil?
-      redirect_to root_url, alert: "'#{params[:title]}' has no director info"
-    end
-    @movie = Movie.find_by(title: params[:title])
   end
 
   # GET /movies/1/edit
@@ -74,10 +74,10 @@ class MoviesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_movie
-      @movie = Movie.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
 
   # Only allow a list of trusted parameters through.
   def movie_params

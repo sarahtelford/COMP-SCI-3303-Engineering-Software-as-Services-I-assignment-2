@@ -3,7 +3,7 @@ Given(/^I am on the details page for "Spirited Away"$/) do
 end
 
 When(/^I click "([^"]*)"$/) do |button|
-  click_button 'Find Same Directors'
+  click_button 'Find Same Director'
 end
 
 Then(/^I should be on the Similar Movies page"$/) do

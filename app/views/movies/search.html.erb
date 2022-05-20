@@ -1,15 +1,10 @@
 <h1 class="ui header">
-  <%= 'Similar movies'%>
+  Similar Movies for <% @movie.title %>
 </h1>
 
-<h2>
-  @movie.title
-</h2>
-
 <ul>
-  @similar_movies.each do |movie_name|
-  li = movie_name
+<% @similar_movies.each do |movie_name| %>
+  <li>
+    <% links_to_back(movie_name) %>
+  </li>
 </ul>
-
-= link_to 'Back', movies_path
-
