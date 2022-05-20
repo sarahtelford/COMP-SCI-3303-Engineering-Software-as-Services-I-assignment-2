@@ -3,7 +3,7 @@ Given(/^I am on the details page for "One Direction: Live on Tour"$/) do
 end
 
 Then(/^I should not see a director$/) do
-  directorName = Movie.find_by_title(movie_title).director
+  directorName = Movie.find_by_title(director)
   expect(page).to.not have_content(directorName)
 end
 
