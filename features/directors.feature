@@ -1,6 +1,9 @@
 Feature: Search for Movies by Director
 
   I want to include and search for the movie director's based on the data provided
+  Feature: Search for Movies by Director
+
+  I want to include and search for the movie director's based on the data provided
 
   Background: Movies in my database
 
@@ -19,16 +22,17 @@ Feature: Search for Movies by Director
       | One Direction: Live on Tour                       | PG-13  | Up All Night: The Live Tour is a video album documenting the 3 January 2012 show of English-Irish boy band One Directions Up All Night Tour.                                                                        | 3/1/2011     | 11/10/2022 | 11/10/2022     |          |
       | Nightmare on elm street                           | R      | A young girl realises that she has to stay awake at any cost to avoid the clawed killer who is butchering her friends one by one in their dreams.                                                                   | 2/1/1998     | 11/10/2022 | 11/10/2022     |          |
 
-    Scenario: add a director to an existing movie
-      When I go to the edit page for "Spirited Away"
-      And  I fill in "Director" with "Hayao Miyazaki"
+  Scenario: I want to add a director
+      Given I am on the home page
+      When I press the edit page for "Spirited Away"
+      Then I fill in Director with "Hayao Miyazaki"
       And  I press "Update Movie"
       Then the director of "Spirited Away" should be "Hayao Miyazaki"
 
-    Scenario: finding a movie with the same director
+    Scenario: I want to find a movie with the same director as Spirited Away
       Given I am on the details page for "Spirited Away"
-      When  I follow "Find Movies With Same Director"
-      Then  I should be on the Similar Movies page for "Spirited Away"
+      When  I click "Find Movies With Same Director"
+      Then  I should be on the Similar Movies page
       And   I should see "Howels Moving Castle"
       But   I should not see "Nightmare on elm street"
 

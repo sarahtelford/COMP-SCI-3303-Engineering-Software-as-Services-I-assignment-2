@@ -4691,3 +4691,1410 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 1.6ms | Allocations: 10231)
 
 
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-05-18 16:09:49 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 8.5ms | Allocations: 2046)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2343)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 9388)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.2ms | Allocations: 10324)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-18 16:09:51 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 9768)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.6ms | Allocations: 10245)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-05-18 16:10:31 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 4.4ms | Allocations: 2046)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2343)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 9375)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.2ms | Allocations: 10310)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-05-18 16:10:33 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 315)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-18 16:10:33 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 9755)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.4ms | Allocations: 10232)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "movies"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "director" varchar)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220505043634)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210322110923);
+
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-18 07:04:42.612549"], ["updated_at", "2022-05-18 07:04:42.612549"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-05-18 07:04:42.614374"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "04d5d95af577fef4637423932e0fe25920963a1d"], ["created_at", "2022-05-18 07:04:42.615968"], ["updated_at", "2022-05-18 07:04:42.615968"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-05-18 16:40:59 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 4.0ms | Allocations: 2046)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2343)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 9494)
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 0.9ms | Allocations: 11040)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-05-18 17:24:48 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (Allocations: 315)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-18 17:24:48 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/movies/index.html.erb:53
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3414)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 10566)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 1.2ms | Allocations: 11042)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-20 12:20:20 +0930
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms | Allocations: 1514)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 12:20:20 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 7356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 25068)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.6ms | Allocations: 27622)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-05-20 12:20:22 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 16.9ms | Allocations: 6082)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 20.3ms | Allocations: 6747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 13686)
+Completed 200 OK in 38ms (Views: 31.8ms | ActiveRecord: 0.5ms | Allocations: 15166)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 12:20:37 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2733)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 9768)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.4ms | Allocations: 10258)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2022-05-20 12:20:50 +0930
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 4.5ms | Allocations: 2050)
+  Rendered movies/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 9333)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 9871)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 12:57:42 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 5612)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 12748)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.9ms | Allocations: 14715)
+
+
+Started GET "/movies/9/edit" for 127.0.0.1 at 2022-05-20 12:57:45 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 4.5ms | Allocations: 2053)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2350)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 9382)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 10432)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-20 13:06:40 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (Allocations: 316)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:06:40 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/movies/index.html.erb:53
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4097)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 11330)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.4ms | Allocations: 12617)
+
+
+Started GET "/movies/search" for 127.0.0.1 at 2022-05-20 13:15:35 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"search"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1709)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Movie with 'id'=search):
+  
+app/controllers/movies_controller.rb:71:in `set_movie'
+Started GET "/movies/1/search" for 127.0.0.1 at 2022-05-20 13:15:45 +0930
+  
+ActionController::RoutingError (No route matches [GET] "/movies/1/search"):
+  
+Started GET "/movies/9/edit" for 127.0.0.1 at 2022-05-20 13:16:14 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 5.8ms | Allocations: 2575)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 10705)
+Completed 200 OK in 34ms (Views: 30.4ms | ActiveRecord: 0.2ms | Allocations: 12583)
+
+
+Started GET "/movies" for 127.0.0.1 at 2022-05-20 13:16:16 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://127.0.0.1:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 330)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:16:16 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3425)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 10461)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.4ms | Allocations: 11103)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:16:19 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 439)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 7475)
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 0.2ms | Allocations: 8541)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:18:49 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1305)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1371)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 3112)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="ui header">
+  <%= @movie.title.blank? ? "Movie" : @movie.title %>
+</h1>
+
+<%= semantic_flash %>
+
+<div class="ui card">
+  <div class="content">
+    <div class="ui divided very relaxed list">
+      <div class="item">
+        <div class="header">
+          Rating
+        </div>
+        <%= @movie.rating %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Description
+        </div>
+        <%= @movie.description %>
+      </div>
+
+      <div class="item">
+        <div class="header">
+          Release date
+        </div>
+        <%= @movie.release_date %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Director
+        </div>
+        <%= @movie.director %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui basic buttons">
+  <%= link_to movies_path, class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
+  <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    <i class="edit"></i> Edit
+  <% end %>
+  <% link_to 'Find Movies With Same Director', search_similar_movies_path(@movie.title) %>
+  <i class="edit"></i> Similar Movies
+  <% end %>
+</div>
+
+):
+1:    <h1 class="ui header">
+2:      <%= @movie.title.blank? ? "Movie" : @movie.title %>
+3:    </h1>
+4:    
+5:    <%= semantic_flash %>
+6:    
+7:    <div class="ui card">
+8:      <div class="content">
+9:        <div class="ui divided very relaxed list">
+10:          <div class="item">
+11:            <div class="header">
+12:              Rating
+13:            </div>
+14:            <%= @movie.rating %>
+15:          </div>
+16:          <div class="item">
+17:            <div class="header">
+18:              Description
+19:            </div>
+20:            <%= @movie.description %>
+21:          </div>
+22:    
+23:          <div class="item">
+24:            <div class="header">
+25:              Release date
+26:            </div>
+27:            <%= @movie.release_date %>
+28:          </div>
+29:          <div class="item">
+30:            <div class="header">
+31:              Director
+32:            </div>
+33:            <%= @movie.director %>
+34:          </div>
+35:        </div>
+36:      </div>
+37:    </div>
+38:    
+39:    <div class="ui basic buttons">
+40:      <%= link_to movies_path, class: "ui button" do %>
+41:        <i class="chevron left icon"></i> Back
+42:      <% end %>
+43:      <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+44:        <i class="edit"></i> Edit
+45:      <% end %>
+46:      <% link_to 'Find Movies With Same Director', search_similar_movies_path(@movie.title) %>
+47:      <i class="edit"></i> Similar Movies
+48:      <% end %>
+49:    </div>
+  
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:19:09 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 10739)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.5ms | Allocations: 11345)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:19:11 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1293)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1358)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2267)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="ui header">
+  <%= @movie.title.blank? ? "Movie" : @movie.title %>
+</h1>
+
+<%= semantic_flash %>
+
+<div class="ui card">
+  <div class="content">
+    <div class="ui divided very relaxed list">
+      <div class="item">
+        <div class="header">
+          Rating
+        </div>
+        <%= @movie.rating %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Description
+        </div>
+        <%= @movie.description %>
+      </div>
+
+      <div class="item">
+        <div class="header">
+          Release date
+        </div>
+        <%= @movie.release_date %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Director
+        </div>
+        <%= @movie.director %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui basic buttons">
+  <%= link_to movies_path, class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
+  <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    <i class="edit"></i> Edit
+  <% end %>
+  <% link_to 'Find Movies With Same Director', search_similar_movies_path(@movie.title) %>
+  <i class="edit"></i> Similar Movies
+  <% end %>
+</div>
+
+):
+1:    <h1 class="ui header">
+2:      <%= @movie.title.blank? ? "Movie" : @movie.title %>
+3:    </h1>
+4:    
+5:    <%= semantic_flash %>
+6:    
+7:    <div class="ui card">
+8:      <div class="content">
+9:        <div class="ui divided very relaxed list">
+10:          <div class="item">
+11:            <div class="header">
+12:              Rating
+13:            </div>
+14:            <%= @movie.rating %>
+15:          </div>
+16:          <div class="item">
+17:            <div class="header">
+18:              Description
+19:            </div>
+20:            <%= @movie.description %>
+21:          </div>
+22:    
+23:          <div class="item">
+24:            <div class="header">
+25:              Release date
+26:            </div>
+27:            <%= @movie.release_date %>
+28:          </div>
+29:          <div class="item">
+30:            <div class="header">
+31:              Director
+32:            </div>
+33:            <%= @movie.director %>
+34:          </div>
+35:        </div>
+36:      </div>
+37:    </div>
+38:    
+39:    <div class="ui basic buttons">
+40:      <%= link_to movies_path, class: "ui button" do %>
+41:        <i class="chevron left icon"></i> Back
+42:      <% end %>
+43:      <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+44:        <i class="edit"></i> Edit
+45:      <% end %>
+46:      <% link_to 'Find Movies With Same Director', search_similar_movies_path(@movie.title) %>
+47:      <i class="edit"></i> Similar Movies
+48:      <% end %>
+49:    </div>
+  
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:19:43 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 33.1ms | Allocations: 4221)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 4285)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.2ms | Allocations: 6000)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x0000000000c210>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title) do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:22:39 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 32.5ms | Allocations: 3888)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 3952)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms | Allocations: 4859)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x0000000000c670>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title) do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:24:03 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 29.4ms | Allocations: 3888)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 3952)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.2ms | Allocations: 4858)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x0000000000c990>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title) do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:24:05 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3385)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 10738)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.5ms | Allocations: 11346)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:24:07 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 9879)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.4ms | Allocations: 10357)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-05-20 13:24:09 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 4.3ms | Allocations: 2460)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 10150)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.2ms | Allocations: 11211)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:24:12 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 9758)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.6ms | Allocations: 10236)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:27:16 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 9760)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms | Allocations: 10236)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:28:19 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 26.6ms | Allocations: 4215)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 4279)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.3ms | Allocations: 5995)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x0000000000cf58>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title) do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:28:21 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 39.1ms | Allocations: 6023)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 6087)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.6ms | Allocations: 6665)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `search_similar_movies_path' for #<ActionView::Base:0x0000000000d390>):
+    67:           <%= link_to movie, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui button" do %>
+    68:             <i class="remove icon"></i> Destroy
+    69:           <% end %>
+    70:           <%= link_to search_similar_movies_path, class: "ui button" do %>
+    71:             <i class="eye icon"></i> Similar Movies
+    72:           <% end %>
+    73:         </div>
+  
+app/views/movies/index.html.erb:70
+app/views/movies/index.html.erb:53
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:28:35 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 10736)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.5ms | Allocations: 12021)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:28:58 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 7660)
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 0.3ms | Allocations: 9399)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:32:05 +0930
+  
+NameError (uninitialized constant Rottenpotatoes):
+  
+config/routes.rb:1:in `<main>'
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:32:49 +0930
+  
+ArgumentError (Invalid route name, already in use: 'root' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:11:in `block in <main>'
+config/routes.rb:8:in `<main>'
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:32:50 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 6464)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 13816)
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 1.0ms | Allocations: 16816)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:32:53 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 22.8ms | Allocations: 4019)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 4084)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms | Allocations: 5245)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x0000000000eb78>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title) do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:33:00 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 9879)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.5ms | Allocations: 10356)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:33:21 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3385)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 10618)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.4ms | Allocations: 11903)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:33:22 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 21.4ms | Allocations: 4042)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 4106)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.2ms | Allocations: 5143)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies' for #<ActionView::Base:0x0000000000ef88>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies(@movie.title) do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:33:36 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 29.5ms | Allocations: 4011)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 4075)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms | Allocations: 5790)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x0000000000f550>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title) do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:35:31 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4204)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 4268)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.1ms | Allocations: 10657)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x00000000010978>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title), class: "ui button" do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:35:59 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1303)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1368)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 3084)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="ui header">
+  <%= @movie.title.blank? ? "Movie" : @movie.title %>
+</h1>
+
+<%= semantic_flash %>
+
+<div class="ui card">
+  <div class="content">
+    <div class="ui divided very relaxed list">
+      <div class="item">
+        <div class="header">
+          Rating
+        </div>
+        <%= @movie.rating %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Description
+        </div>
+        <%= @movie.description %>
+      </div>
+
+      <div class="item">
+        <div class="header">
+          Release date
+        </div>
+        <%= @movie.release_date %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Director
+        </div>
+        <%= @movie.director %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui basic buttons">
+  <%= link_to movies_path, class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
+  <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    <i class="edit"></i> Edit
+  <% end %>
+  <%class: "ui button" do%>
+  <i class="edit"></i> Similar Movies
+  <% end %>
+</div>
+
+):
+1:    <h1 class="ui header">
+2:      <%= @movie.title.blank? ? "Movie" : @movie.title %>
+3:    </h1>
+4:    
+5:    <%= semantic_flash %>
+6:    
+7:    <div class="ui card">
+8:      <div class="content">
+9:        <div class="ui divided very relaxed list">
+10:          <div class="item">
+11:            <div class="header">
+12:              Rating
+13:            </div>
+14:            <%= @movie.rating %>
+15:          </div>
+16:          <div class="item">
+17:            <div class="header">
+18:              Description
+19:            </div>
+20:            <%= @movie.description %>
+21:          </div>
+22:    
+23:          <div class="item">
+24:            <div class="header">
+25:              Release date
+26:            </div>
+27:            <%= @movie.release_date %>
+28:          </div>
+29:          <div class="item">
+30:            <div class="header">
+31:              Director
+32:            </div>
+33:            <%= @movie.director %>
+34:          </div>
+35:        </div>
+36:      </div>
+37:    </div>
+38:    
+39:    <div class="ui basic buttons">
+40:      <%= link_to movies_path, class: "ui button" do %>
+41:        <i class="chevron left icon"></i> Back
+42:      <% end %>
+43:      <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+44:        <i class="edit"></i> Edit
+45:      <% end %>
+46:      <%class: "ui button" do%>
+47:      <i class="edit"></i> Similar Movies
+48:      <% end %>
+49:    </div>
+  
+app/views/movies/show.html.erb:46: syntax error, unexpected ':'
+app/views/movies/show.html.erb:46: syntax error, unexpected `do', expecting `end'
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected ':'
+app/views/movies/show.html.erb:46: syntax error, unexpected `do', expecting `end'
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected ':'
+app/views/movies/show.html.erb:46: syntax error, unexpected `do', expecting `end'
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected ':'
+app/views/movies/show.html.erb:46: syntax error, unexpected `do', expecting `end'
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected ':'
+app/views/movies/show.html.erb:46: syntax error, unexpected `do', expecting `end'
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected ':'
+app/views/movies/show.html.erb:46: syntax error, unexpected `do', expecting `end'
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:36:17 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:71:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1303)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1368)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms | Allocations: 3084)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="ui header">
+  <%= @movie.title.blank? ? "Movie" : @movie.title %>
+</h1>
+
+<%= semantic_flash %>
+
+<div class="ui card">
+  <div class="content">
+    <div class="ui divided very relaxed list">
+      <div class="item">
+        <div class="header">
+          Rating
+        </div>
+        <%= @movie.rating %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Description
+        </div>
+        <%= @movie.description %>
+      </div>
+
+      <div class="item">
+        <div class="header">
+          Release date
+        </div>
+        <%= @movie.release_date %>
+      </div>
+      <div class="item">
+        <div class="header">
+          Director
+        </div>
+        <%= @movie.director %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui basic buttons">
+  <%= link_to movies_path, class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
+  <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    <i class="edit"></i> Edit
+  <% end %>
+  <% class = "ui button"%>
+  <i class="edit"></i> Similar Movies
+  <% end %>
+</div>
+
+):
+1:    <h1 class="ui header">
+2:      <%= @movie.title.blank? ? "Movie" : @movie.title %>
+3:    </h1>
+4:    
+5:    <%= semantic_flash %>
+6:    
+7:    <div class="ui card">
+8:      <div class="content">
+9:        <div class="ui divided very relaxed list">
+10:          <div class="item">
+11:            <div class="header">
+12:              Rating
+13:            </div>
+14:            <%= @movie.rating %>
+15:          </div>
+16:          <div class="item">
+17:            <div class="header">
+18:              Description
+19:            </div>
+20:            <%= @movie.description %>
+21:          </div>
+22:    
+23:          <div class="item">
+24:            <div class="header">
+25:              Release date
+26:            </div>
+27:            <%= @movie.release_date %>
+28:          </div>
+29:          <div class="item">
+30:            <div class="header">
+31:              Director
+32:            </div>
+33:            <%= @movie.director %>
+34:          </div>
+35:        </div>
+36:      </div>
+37:    </div>
+38:    
+39:    <div class="ui basic buttons">
+40:      <%= link_to movies_path, class: "ui button" do %>
+41:        <i class="chevron left icon"></i> Back
+42:      <% end %>
+43:      <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+44:        <i class="edit"></i> Edit
+45:      <% end %>
+46:      <% class = "ui button"%>
+47:      <i class="edit"></i> Similar Movies
+48:      <% end %>
+49:    </div>
+  
+app/views/movies/show.html.erb:46: syntax error, unexpected '='
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected '='
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected '='
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected '='
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected '='
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+app/views/movies/show.html.erb:46: syntax error, unexpected '='
+app/views/movies/show.html.erb:52: syntax error, unexpected `end', expecting end-of-input
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:38:38 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:75:in `set_movie'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:75:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 14.6ms | Allocations: 4203)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4267)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.6ms | Allocations: 10640)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x000000000126d8>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title), class: "ui button" do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:38:47 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:75:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 33.0ms | Allocations: 3887)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 3951)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms | Allocations: 4858)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x00000000012c28>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title), class: "ui button" do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:38:49 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:75:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 29.6ms | Allocations: 3887)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 3951)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.2ms | Allocations: 4857)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x00000000012ef8>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title), class: "ui button" do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:39:30 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 3880)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 3944)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.7ms | Allocations: 9640)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x00000000014190>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title), class: "ui button" do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:39:32 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 31.8ms | Allocations: 3887)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 3952)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms | Allocations: 4858)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x00000000014488>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title), class: "ui button" do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:39:33 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3436)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 10791)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.7ms | Allocations: 11396)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:40:49 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:14:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 5802)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 12936)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.7ms | Allocations: 15170)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:40:51 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:81:in `set_movie'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 29.8ms | Allocations: 3896)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 3960)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.3ms | Allocations: 5463)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x00000000015900>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title), class: "ui button" do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:40:53 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2721)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 9873)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.5ms | Allocations: 10349)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2022-05-20 13:40:54 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:81:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 5.0ms | Allocations: 2464)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3118)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 10199)
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.2ms | Allocations: 11261)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for 127.0.0.1 at 2022-05-20 13:40:56 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 9758)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.4ms | Allocations: 10235)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2022-05-20 13:59:41 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:83:in `set_movie'
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:83:in `set_movie'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:21:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 3896)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 3960)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms | Allocations: 9678)
+
+
+  
+ActionView::Template::Error (undefined method `search_similar_movies_path' for #<ActionView::Base:0x00000000016d78>):
+    43:   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
+    44:     <i class="edit"></i> Edit
+    45:   <% end %>
+    46:   <% link_to search_similar_movies_path(@movie.title), class: "ui button" do%>
+    47:   <i class="edit"></i> Similar Movies
+    48:   <% end %>
+    49: </div>
+  
+app/views/movies/show.html.erb:46
