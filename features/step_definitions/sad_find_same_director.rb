@@ -1,10 +1,10 @@
-Given(/^I am on the details page for "One Direction: Live on Tour"$/) do
+Given(/^I am on the "([^"]*)" details page$/) do |title|
+  expect(Movie.find_by_title(title))
   visit '/movies/11'
 end
 
-Then(/^I should not see a director$/) do
-  directorName = Movie.find_by_title(director)
-  expect(page).to.not have_content(directorName)
+Then(/^I should not see a "([^"]*)"$/) do |director|
+  expect(page).to have_no_content(director)
 end
 
 Then(/^I should be on the home page$/) do

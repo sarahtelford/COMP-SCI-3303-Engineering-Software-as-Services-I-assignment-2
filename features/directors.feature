@@ -35,8 +35,8 @@ Feature: Search for Movies by Director
       But   I should not see "Nightmare on elm street"
 
     Scenario: cant find a movie with the same director (SAD)
-      Given I am on the details page for "One Direction: Live on Tour"
-      Then  I should not see a director
+      Given I am on the "One Direction: Live on Tour" details page
+      Then  I should not see a "director"
       When  I click Find Similar Movies
       Then  I should be on the home page
       And   I should be informed that "'Howels Moving Castle' has no director information"

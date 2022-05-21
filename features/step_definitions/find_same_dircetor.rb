@@ -1,13 +1,10 @@
-Given(/^I am on the details page for "Spirited Away"$/) do
+Given(/^I am on the details page for "([^"]*)"$/) do |title|
+  expect(Movie.find_by_title(title))
   visit '/movies/9'
 end
 
 When(/^I click Find Similar Movies$/) do
-  click_button 'Find Similar Movies'
-end
-
-Then(/^I should be on the Similar Movies page"$/) do
-  visit '/movies/9/search'
+  click_link 'Find Same Director'
 end
 
 And(/^I should see "([^"]*)"$/) do |title|
@@ -16,7 +13,7 @@ And(/^I should see "([^"]*)"$/) do |title|
 end
 
 But(/^I should not see "([^"]*)"$/) do |title|
-  expect(page).not.to have_content(title)
-  expect(page).not_to have_content("Nightmare on elm street")
+  expect(page).to have_no_content(title)
+  expect(page).to have_no_content("Nightmare on elm street")
 end
 

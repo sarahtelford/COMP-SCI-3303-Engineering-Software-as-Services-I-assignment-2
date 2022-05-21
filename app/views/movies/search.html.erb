@@ -1,13 +1,17 @@
 <h1 class="ui header">
- Similar Movies for <% @movie.title %>
+  Similar Movies for <% @movie.title %>
 </h1>
 
-<div>
-  <ul>
-    <% @similar_movies.each do |movie_name| %>
+<ul>
+  <% @similar_movies.each do |movie_name| %>
       <li>
-        <% link_to(movie_name) %>
+        <%movie_name%>
       </li>
     <% end %>
-  </ul>
+</ul>
+
+<div class="ui basic buttons">
+  <%= link_to movies_path, class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
 </div>

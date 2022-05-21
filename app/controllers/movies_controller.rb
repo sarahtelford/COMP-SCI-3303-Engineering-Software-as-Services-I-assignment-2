@@ -18,13 +18,15 @@ class MoviesController < ApplicationController
   def search
     @similar_movies = Movie.find_by_title(params[:title])
     if @similar_movies.nil?
-      redirect_to root_url, alert: "'#{params[:title]}' has no director info"
+      redirect_to root_url, alert: "'#{params[:title]}' has no director information"
     end
     @movie = Movie.find_by(title: params[:title])
   end
 
   # GET /movies/1 or /movies/1.json
   def show
+    id = params[:id]
+    @movie = Movie.find(id)
   end
 
   # GET /movies/new
@@ -34,6 +36,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/1/edit
   def edit
+    @movie = Movie.find params[:id]
   end
 
   # POST /movies or /movies.json
