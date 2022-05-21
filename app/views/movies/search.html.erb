@@ -1,11 +1,12 @@
 <h1 class="ui header">
-  Similar Movies for <% @movie.title %>
+  Similar Movies for
+  <%= @movie.title.blank? ? "Movie" : @movie.title %>
 </h1>
 
 <ul>
-  <% @similar_movies.each do |movie_name| %>
+  <% @similar_movies.each do |movie_title| %>
       <li>
-        <%movie_name%>
+        <%= link_to movie_title %>
       </li>
     <% end %>
 </ul>
