@@ -43,7 +43,7 @@
   <%= link_to edit_movie_path(@movie), class: "ui button" do %>
     <i class="edit"></i> Edit
   <% end %>
-  <%= link_to find_by_title_path(@movie.title) do %>
+  <%= link_to find_by_title_path(@movie.title), class: "ui button" do %>
     <i> </i> Find Same Director
   <% end %>
 </div>

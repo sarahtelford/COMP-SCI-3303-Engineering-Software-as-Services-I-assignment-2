@@ -6835,3 +6835,830 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.4ms | Allocations: 10233)
 
 
+Started GET "/" for ::1 at 2022-05-21 14:30:16 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 2ms (Allocations: 265)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:30:16 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/movies/index.html.erb:53
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 4083)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 11442)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 1.2ms | Allocations: 12725)
+
+
+Started GET "/movies/1/edit" for ::1 at 2022-05-21 14:30:18 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 4.9ms | Allocations: 2463)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 10150)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.3ms | Allocations: 11235)
+
+
+Started GET "/movies/1" for ::1 at 2022-05-21 14:30:20 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 499)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 7535)
+Completed 200 OK in 23ms (Views: 18.5ms | ActiveRecord: 0.3ms | Allocations: 8601)
+
+
+Started GET "/find_by_title/Soul" for ::1 at 2022-05-21 14:30:21 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Soul"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Soul"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+Redirected to http://localhost:3000/
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Soul"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1410)
+
+
+Started GET "/" for ::1 at 2022-05-21 14:30:21 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:30:21 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2759)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 9792)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms | Allocations: 10277)
+
+
+Started GET "/movies/2" for ::1 at 2022-05-21 14:30:29 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 7222)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 8158)
+
+
+Started GET "/find_by_title/The%20Lord%20of%20the%20Rings:%20The%20Fellowship%20of%20the%20Ring" for ::1 at 2022-05-21 14:30:30 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"The Lord of the Rings: The Fellowship of the Ring"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "The Lord of the Rings: The Fellowship of the Ring"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "jh"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "The Lord of the Rings: The Fellowship of the Ring"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1195)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms | Allocations: 3324)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="ui header">
+  Similar Movies for <% @movie.title %>
+</h1>
+
+<ul>
+<% @similar_movies.each do |movie_name| %>
+  <li>
+    <% links_to_back(movie_name) %>
+  </li>
+</ul>
+):
+1:    <h1 class="ui header">
+2:      Similar Movies for <% @movie.title %>
+3:    </h1>
+4:    
+5:    <ul>
+6:    <% @similar_movies.each do |movie_name| %>
+7:      <li>
+8:        <% links_to_back(movie_name) %>
+9:      </li>
+10:    </ul>
+  
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/movies/2" for ::1 at 2022-05-21 14:30:35 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 7341)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.4ms | Allocations: 8276)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:30:36 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2723)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 9756)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.6ms | Allocations: 10232)
+
+
+Started GET "/movies/1/edit" for ::1 at 2022-05-21 14:30:38 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 4.0ms | Allocations: 2051)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2348)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 9380)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.2ms | Allocations: 10316)
+
+
+Started GET "/movies/1" for ::1 at 2022-05-21 14:30:39 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 166)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 7199)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.2ms | Allocations: 8135)
+
+
+Started GET "/find_by_title/Soul" for ::1 at 2022-05-21 14:30:40 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Soul"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Soul"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+Redirected to http://localhost:3000/
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Soul"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1293)
+
+
+Started GET "/" for ::1 at 2022-05-21 14:30:40 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:30:40 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2755)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 9788)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.5ms | Allocations: 10272)
+
+
+Started GET "/movies/4" for ::1 at 2022-05-21 14:30:43 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 7309)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.2ms | Allocations: 8245)
+
+
+Started GET "/find_by_title/Moana" for ::1 at 2022-05-21 14:30:44 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Moana"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Moana"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+Redirected to http://localhost:3000/
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Moana"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1291)
+
+
+Started GET "/" for ::1 at 2022-05-21 14:30:44 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:30:44 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2755)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 9788)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.5ms | Allocations: 10272)
+
+
+Started GET "/movies/2" for ::1 at 2022-05-21 14:30:46 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 7222)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.2ms | Allocations: 8158)
+
+
+Started GET "/find_by_title/The%20Lord%20of%20the%20Rings:%20The%20Fellowship%20of%20the%20Ring" for ::1 at 2022-05-21 14:30:47 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"The Lord of the Rings: The Fellowship of the Ring"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "The Lord of the Rings: The Fellowship of the Ring"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "jh"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "The Lord of the Rings: The Fellowship of the Ring"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1119)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1184)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms | Allocations: 3173)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="ui header">
+  Similar Movies for <% @movie.title %>
+</h1>
+
+<ul>
+<% @similar_movies.each do |movie_name| %>
+  <li>
+    <% links_to_back(movie_name) %>
+  </li>
+</ul>
+):
+1:    <h1 class="ui header">
+2:      Similar Movies for <% @movie.title %>
+3:    </h1>
+4:    
+5:    <ul>
+6:    <% @similar_movies.each do |movie_name| %>
+7:      <li>
+8:        <% links_to_back(movie_name) %>
+9:      </li>
+10:    </ul>
+  
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/movies/2" for ::1 at 2022-05-21 14:30:53 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 7341)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.2ms | Allocations: 8277)
+
+
+Started GET "/movies" for ::1 at 2022-05-21 14:30:54 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 315)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:30:54 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2723)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 9780)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.5ms | Allocations: 10256)
+
+
+Started GET "/movies/3" for ::1 at 2022-05-21 14:30:56 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 164)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 7197)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.2ms | Allocations: 8132)
+
+
+Started GET "/find_by_title/Encanto" for ::1 at 2022-05-21 14:30:57 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Encanto"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Encanto"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+Redirected to http://localhost:3000/
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Encanto"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1291)
+
+
+Started GET "/" for ::1 at 2022-05-21 14:30:57 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:30:57 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2755)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 9788)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.8ms | Allocations: 10272)
+
+
+Started GET "/movies/9/edit" for ::1 at 2022-05-21 14:31:09 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 5.0ms | Allocations: 2046)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2343)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 9380)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.2ms | Allocations: 10316)
+
+
+Started PATCH "/movies/9" for ::1 at 2022-05-21 14:31:13 +0930
+Processing by MoviesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"Spirited Away", "rating"=>"PG-13", "description"=>"Ten-year-old Chihiro and her parents end up at an abandoned amusement park inhabited by supernatural beings.", "release_date(1i)"=>"2002", "release_date(2i)"=>"12", "release_date(3i)"=>"12", "director"=>"director"}, "commit"=>"Update Movie", "id"=>"9"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:57:in `block in update'
+  [1m[36mMovie Update (0.6ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ?, "director" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2022-05-21 05:01:13.797109"], ["director", "director"], ["id", 9]]
+  ↳ app/controllers/movies_controller.rb:57:in `block in update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:57:in `block in update'
+Redirected to http://localhost:3000/movies/9
+Completed 302 Found in 15ms (ActiveRecord: 2.1ms | Allocations: 3198)
+
+
+Started GET "/movies/9" for ::1 at 2022-05-21 14:31:13 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 7258)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.1ms | Allocations: 8203)
+
+
+Started GET "/movies" for ::1 at 2022-05-21 14:31:16 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 315)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:31:16 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 9757)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.5ms | Allocations: 10233)
+
+
+Started GET "/movies/9" for ::1 at 2022-05-21 14:31:19 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 7206)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.2ms | Allocations: 8142)
+
+
+Started GET "/movies" for ::1 at 2022-05-21 14:31:20 +0930
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 315)
+
+
+Started GET "/movies?ratings%5B%5D=G&ratings%5B%5D=PG&ratings%5B%5D=PG-13&ratings%5B%5D=R" for ::1 at 2022-05-21 14:31:20 +0930
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>["G", "PG", "PG-13", "R"]}
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [[nil, "G"], [nil, "PG"], [nil, "PG-13"], [nil, "R"]]
+  ↳ app/views/movies/index.html.erb:53
+  Rendered movies/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 9757)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 1.1ms | Allocations: 10234)
+
+
+Started GET "/movies/10/edit" for ::1 at 2022-05-21 14:31:23 +0930
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (Duration: 5.7ms | Allocations: 2046)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2343)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 9399)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.4ms | Allocations: 10335)
+
+
+Started PATCH "/movies/10" for ::1 at 2022-05-21 14:31:25 +0930
+Processing by MoviesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"Howels Moving Castle", "rating"=>"PG-13", "description"=>"Jealous of Sophies closeness to Howl, a wizard, the Witch of Waste transforms her into an old lady.", "release_date(1i)"=>"2005", "release_date(2i)"=>"8", "release_date(3i)"=>"22", "director"=>"director"}, "commit"=>"Update Movie", "id"=>"10"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:57:in `block in update'
+  [1m[36mMovie Update (0.6ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ?, "director" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2022-05-21 05:01:25.598800"], ["director", "director"], ["id", 10]]
+  ↳ app/controllers/movies_controller.rb:57:in `block in update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:57:in `block in update'
+Redirected to http://localhost:3000/movies/10
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms | Allocations: 3197)
+
+
+Started GET "/movies/10" for ::1 at 2022-05-21 14:31:25 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 7242)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 8187)
+
+
+Started GET "/find_by_title/Howels%20Moving%20Castle" for ::1 at 2022-05-21 14:31:26 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Howels Moving Castle"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "director"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1120)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1185)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 3176)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="ui header">
+  Similar Movies for <% @movie.title %>
+</h1>
+
+<ul>
+<% @similar_movies.each do |movie_name| %>
+  <li>
+    <% links_to_back(movie_name) %>
+  </li>
+</ul>
+):
+1:    <h1 class="ui header">
+2:      Similar Movies for <% @movie.title %>
+3:    </h1>
+4:    
+5:    <ul>
+6:    <% @similar_movies.each do |movie_name| %>
+7:      <li>
+8:        <% links_to_back(movie_name) %>
+9:      </li>
+10:    </ul>
+  
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:12: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/movies/10" for ::1 at 2022-05-21 14:31:45 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 176)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 7328)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.2ms | Allocations: 8263)
+
+
+Started GET "/movies/10" for ::1 at 2022-05-21 14:33:12 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 7742)
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 0.2ms | Allocations: 9487)
+
+
+Started GET "/find_by_title/Howels%20Moving%20Castle" for ::1 at 2022-05-21 14:33:13 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Howels Moving Castle"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "director"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1135)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1200)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 3318)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="ui header">
+  Similar Movies for <% @movie.title %>
+</h1>
+
+<div>
+  <ul>
+    <% @similar_movies.each do |movie_name| %>
+      <li>
+        <% links_to_back(movie_name) %>
+      </li>
+      </ul>
+</div>
+
+):
+1:    <h1 class="ui header">
+2:      Similar Movies for <% @movie.title %>
+3:    </h1>
+4:    
+5:    <div>
+6:      <ul>
+7:        <% @similar_movies.each do |movie_name| %>
+8:          <li>
+9:            <% links_to_back(movie_name) %>
+10:          </li>
+11:          </ul>
+12:    </div>
+  
+app/views/movies/search.html.erb:15: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:15: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:15: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:15: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:15: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:15: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/find_by_title/Howels%20Moving%20Castle" for ::1 at 2022-05-21 14:34:20 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Howels Moving Castle"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "director"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1198)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 3994)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<h1 class="ui header">
+ Similar Movies for <% @movie.title %>
+</h1>
+
+<div>
+  <ul>
+    <% @similar_movies.each do |movie_name| %>
+      <li>
+        <% links_to_back(movie_name) %>
+      </li>
+      </ul>
+</div>
+
+):
+1:    
+2:    <h1 class="ui header">
+3:     Similar Movies for <% @movie.title %>
+4:    </h1>
+5:    
+6:    <div>
+7:      <ul>
+8:        <% @similar_movies.each do |movie_name| %>
+9:          <li>
+10:            <% links_to_back(movie_name) %>
+11:          </li>
+12:          </ul>
+13:    </div>
+  
+app/views/movies/search.html.erb:16: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:16: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:16: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:16: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:16: syntax error, unexpected end-of-input, expecting `end'
+app/views/movies/search.html.erb:16: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/find_by_title/Howels%20Moving%20Castle" for ::1 at 2022-05-21 14:36:15 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Howels Moving Castle"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "director"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 6.7ms | Allocations: 4033)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4097)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms | Allocations: 6892)
+
+
+  
+ActionView::Template::Error (undefined method `links_to_back' for #<ActionView::Base:0x0000000001d588>
+Did you mean?  link_to):
+     6:   <ul>
+     7:     <% @similar_movies.each do |movie_name| %>
+     8:       <li>
+     9:         <% links_to_back(movie_name) %>
+    10:       </li>
+    11:     <% end %>
+    12:   </ul>
+  
+app/views/movies/search.html.erb:9
+app/views/movies/search.html.erb:7:in `each'
+app/views/movies/search.html.erb:7
+Started GET "/find_by_title/Howels%20Moving%20Castle" for ::1 at 2022-05-21 14:36:16 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Howels Moving Castle"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "director"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 19.9ms | Allocations: 3872)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 3936)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms | Allocations: 5926)
+
+
+  
+ActionView::Template::Error (undefined method `links_to_back' for #<ActionView::Base:0x0000000001d998>
+Did you mean?  link_to):
+     6:   <ul>
+     7:     <% @similar_movies.each do |movie_name| %>
+     8:       <li>
+     9:         <% links_to_back(movie_name) %>
+    10:       </li>
+    11:     <% end %>
+    12:   </ul>
+  
+app/views/movies/search.html.erb:9
+app/views/movies/search.html.erb:7:in `each'
+app/views/movies/search.html.erb:7
+Started GET "/find_by_title/Howels%20Moving%20Castle" for ::1 at 2022-05-21 14:36:26 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Howels Moving Castle"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "director"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 1.9ms | Allocations: 737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 8090)
+Completed 200 OK in 27ms (Views: 20.0ms | ActiveRecord: 0.4ms | Allocations: 10913)
+
+
+Started GET "/find_by_title/Howels%20Moving%20Castle" for ::1 at 2022-05-21 14:36:27 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Howels Moving Castle"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "director"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 0.8ms | Allocations: 206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 7240)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 0.6ms | Allocations: 9259)
+
+
+Started GET "/movies/10" for ::1 at 2022-05-21 14:36:30 +0930
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:79:in `set_movie'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 7546)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.2ms | Allocations: 8611)
+
+
+Started GET "/find_by_title/Howels%20Moving%20Castle" for ::1 at 2022-05-21 14:36:32 +0930
+Processing by MoviesController#search as HTML
+  Parameters: {"title"=>"Howels Moving Castle"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/models/movie.rb:7:in `find_by_title'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "movies"."title" FROM "movies" WHERE "movies"."director" = ?[0m  [["director", "director"]]
+  ↳ app/models/movie.rb:9:in `find_by_title'
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Howels Moving Castle"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:23:in `search'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/search.html.erb within layouts/application
+  Rendered movies/search.html.erb within layouts/application (Duration: 0.7ms | Allocations: 206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 7240)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 9259)
+
+
