@@ -11,6 +11,6 @@ Then(/^I should be on the home page$/) do
   visit root_path
 end
 
-And(/^I should be informed that "'Howels Moving Castle' has no director information"$/) do
-  expect(page).to have_content("'Howels Moving Castle' has no director information'")
+And(/^I should be informed that "([^"]*)"$/) do |statement|
+  expect(page).to have_text(statement)
 end

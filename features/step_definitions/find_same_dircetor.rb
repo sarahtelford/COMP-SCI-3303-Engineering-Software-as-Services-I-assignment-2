@@ -9,11 +9,9 @@ end
 
 And(/^I should see "([^"]*)"$/) do |title|
   expect(page).to have_content(title)
-  expect(page).to have_content("Howels Moving Castle")
 end
 
 But(/^I should not see "([^"]*)"$/) do |title|
   expect(page).to have_no_content(title)
-  expect(page).to have_no_content("Nightmare on elm street")
 end
 
