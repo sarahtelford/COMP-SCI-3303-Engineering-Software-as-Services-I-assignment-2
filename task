@@ -1,0 +1,220 @@
+n this assignment, you will use a combination of Behavior-Driven Design (BDD) and Test-Driven Development (TDD) with the Cucumber and RSpec tools to add a "find movies with the same director" feature to RottenPotatoes, and deploy the resulting app on Heroku.
+
+General advice: This assignment involves modifying a different version of RottenPotatoes from assignment 1 in various ways. Git is your friend: commit frequently in case you inadvertently break something that was working before! That way you can always back up to an earlier revision, or just visually compare what changed in each file since your last "good" commit. If it helps, use a Git GUI software to manage your repository.
+
+Remember, commit early and often!
+
+Preparation: get RottenPotatoes running in development
+Repository
+Firstly, you need to copy the repository for this assignment.  Do not fork, as this is an assignment.
+
+At github.cs.adelaide.edu.auLinks to an external site., create a new private project called esas-s1-2022-assign-2
+
+On your machine, do the following (replace aXXXXXXX with your id). This will copy the base version of the repository to your private one. This is an assignment, so please do not fork.
+
+In RubyMine
+Create a new project from git@github.cs.adelaide.edu.au:a1781032/esas-s1-2022-assign-2.git
+Remove origin from Git -> Manage remotes
+Add a new origin remote pointing to git@github.cs.adelaide.edu.au:aXXXXXXX/esas-s1-2022-assign-2.git
+or in terminal:
+$ git clone git@github.cs.adelaide.edu.au:a1781032/esas-s1-2022-assign-2.git
+$ cd 22-s1-esas-assign-2
+$ git remote rm origin
+$ git remote add origin git@github.cs.adelaide.edu.au:aXXXXXXX/esas-s1-2022-assign-2.git 
+$ git push --set-upstream origin master
+Installing gems
+Run bundle install to make sure all the gems (libraries) used by the app are in place.
+
+ 
+
+Compile JS for the test environmwent
+ 
+
+bundle exec rails webpacker:install
+
+RAILS_ENV=test bundle exec rails webpacker:compile
+
+ 
+
+Database
+Run rails db:migrate to create the database and run the migrations.
+
+Self-check
+How does Rails decide where and how to create the development database? (Hint: check the db subdirectory)
+The above command collates all the migrations to generate a database schema. This will be used to tell how the database is the be structured (we don't care which database it is). The schema is stored at  db/schema.rb and reflects the up-to-date database schema. You should place this file under version control.
+
+Self-check
+What tables got created by the migrations?
+ 
+
+It is good practice to have some data in your development database during your development. We call this seed data. To define your seed data, edit the db/seeds.rb file with Ruby code. Tip: Use a data generating website like Mockeroo (Links to an external site.) or a gem like Faker (Links to an external site.).
+
+Once you have added at least a dozen data items, seed the database with the following command:
+
+$ rails db:seed
+Depending on how you have written your seed file, running the seed command again may cause an error. You can use $ rails db:reset to delete, rebuild and re-seed your database.
+
+Note: all of the above commands affect the local environment which is development by default.
+
+ 
+
+Deployment
+To deploy your app on Heroku you will create a new app called aXXXXXXX -esas-s1-2022-assign-2.
+
+ 
+
+Make sure you have done this before from your machine:
+heroku login -i
+heroku keys:add
+Run heroku apps:create aXXXXXXX-esas-s1-2022-assign-2 to create a Heroku container (replace aXXXXXXX with your id).
+
+Run git push heroku master to push the webapp to Heroku.
+Pushing to the Heroku remote initiates hooks that will execute commands on the Heroku instance. The first time running this, the instance will install all the gems, which may take a few minutes. Subsequent pushes will be much faster as least files have changed.
+
+Run heroku rake db:migrate to create and migrate the database at the production environment.
+Database management is not automatic by default, and will require your to use this command to update, and perform migrations on the remote database manually.
+
+Run your web browser to connect to your Heroku app https://aXXXXXXX-esas-s1-2022-assign-2.herokuapp.com (replace aXXXXXXX with your id)
+
+ 
+
+For an interactive shell on the remote instance use:
+
+$ heroku run bash
+Before running your application, ensure that there is only 1 instance running:
+
+$ heroku ps:scale web=1 && heroku ps
+=== web (Standard-1X): bin/rails server -p $PORT -e $RAILS_ENV (1)
+web.1: starting 2020/05/26 14:33:18 -0500 (~ 15s ago)
+The output shows there is only 1 instance running called web.1.
+
+Open the heroku app via the command line (or via the website) using:
+
+$ heroku open
+(you may not see any output), or open the app from our Heroku page.
+
+ 
+
+Opening the Heroku instance allows it to be visible over the internet. You can also view this information via the Heroku website. Your website will now be accessible via the URL https://aXXXXXXX -esas-s1-2022-assign-2.herokuapp.com/
+
+When you have new changes committed and ready to be pushed to the production server, simply use the git push heroku master command, and Heroku will handle all of the deployment for you. The Heroku code will be updated on the next request.
+
+ 
+
+Two remote repositories
+Remember, there are 2 remote repositories:
+
+The one at cs.adelaide.edu.au:aXXXXXXX/esas-s1-2022-assign-2 - called origin - we will be assessing this one.
+The one at Heroku - called heroku - used for remote deployment.
+User Interface
+The Rotten Tomatoes project uses the Semantic UI (Links to an external site.) library, so consult the documentation for any UI-related queries.
+
+ 
+
+ 
+
+BDD-TDD
+Behaviour-Driven-Development and Test-Driven-Development
+
+Cucumber, Rspec, Guard and SimpleCov have already been installed in the assignment 2 repository. Confirm both testing suites were installed and working by running in Rubymine
+
+Double CTRL (run anything) rspec or, in the terminal:
+
+$ bundle exec rspec
+and
+
+Double CTRL (run anything) cucumber or, in the terminal:
+
+$ bundle exec cucumber
+Make sure that you have coverage analysis generated to coverage/index.html.
+
+Since presumably, you have no features or specs yet, both tasks should execute correctly reporting that there are zero tests to run.
+
+ 
+
+Assignment Specification
+Part 1: Add a Director field to Movies
+Write your first RSpec for the Movie class that will test that the :director field exists (or can respond_to) in the Movie class. This will fail because the Movie class currently does not have the appropriate field. Once the test is failing, then you can start implementing it.
+
+Create and apply a migration that adds the Director field to the movies table. The director field should be a string containing the name of the movie’s director.
+
+Hint: use the add_column method of ActiveRecord::Migration to do this. Do not change any existing migrations or the schema.
+
+Self-Check:
+Where can add_column be found in the Rails documentation?
+What does add_column do?
+ 
+
+Applying the migration should now make your first RSpec test pass. If it does not, inspect why it might is not passing (ask for help if you are stuck).
+
+Check all the web pages and actions in the movies controller (MoviesController) to ensure that it is working (and updating correctly).
+
+Remember to add :director to the list of movie attributes in themovie_params method in movies_controller.rb.
+
+ 
+
+Part 2: Use BDD+TDD to get new scenarios passing
+The purpose of this part is to practice writing the test first. We all know it is tedious, but there are many merits for it. Please give it a try and commit to sticking to it.
+
+We need three Cucumber scenarios to drive the creation of the happy path for the feature "Search for Movies by Director".
+
+The first lets you add director information to an existing movie and doesn't require creating any new views or controller actions (but does require modifying existing views, and will require creating a new step definition and possibly adding a line or two to features/support/paths.rb).
+The second lets you click a new link on a movie details page labelled "Find Movies With the Same Director", and shows all movies that share the same director as the displayed movie. For this, you'll have to modify the existing movie#show view, and you'll have to add a route, view and controller method for "Find Movies With the Same Director".
+The third handles the sad path when the current movie has no director information, but we try to do "Find with the Same Director" anyway.
+Going one Cucumber step at a time, use RSpec to create the appropriate controller and model specs to drive the creation of the new controller and model methods. At the least, you will need to write tests to drive the creation of:
+
+A RESTful route for "Find Similar Movies"
+HINT: use the 'match' syntax for routes as suggested in "Non-Resource-Based Routes" in Section 4.1 of ESaaS course textbook.
+You can also use the key :as to specify a name to generate helpers (i.e. search_directors_path) http://guides.rubyonrails.org/routing.htmlLinks to an external site.
+Note: you probably won’t test this directly in Rspec, but a line in Cucumber or RSpec will fail if the route is not correct.
+A controller method to receive the click on "Find With the Same Director", and grab the id (for example) of the movie that is the subject of the match (i.e. the one we're trying to find movies similar to)
+A model method in the Movie model to find movies whose director matches that of the current movie.
+Note: This implies that you should write at least 2 specs for your controller:
+When the specified movie has a director, it should...
+When the specified movie has no director, it should ...
+There should also be 2 for your model:
+it should find movies by the same director and
+it should not find movies by different directors
+It's up to you to decide whether you want to handle the sad path of "no director" in the controller method or in the model method, but you must provide a test for whichever one you do.
+
+Part 3: Write RSpec tests for your code
+For the third part of the assignment, in order to demonstrate your ability to write (good) tests, write Cucumber and Rspec tests for all existing functionality in the application. 
+
+Please commit and comment each part of the code separately. 
+
+We want you to report your code coverage as well.
+
+The code coverage tool SimpleCov has been installed and configured for you. Links to an external site.
+
+When you run Rspec or cucumber, SimpleCov will generate a report in a directory named coverage/. Since both RSpec and Cucumber are so widely used, SimpleCov can intelligently merge the results, so running the tests for Rspec does not overwrite the coverage results from SimpleCov and vice versa.
+
+To see the results open coverage/index.html.
+
+Improve your test coverage by adding specs and/or Cucumber features for the untested or under-tested code.
+
+Specifically, you can mix and match:
+
+model specs
+controllers specs
+request specs
+Cucumber scenarios and step definitions.
+You should be able to reach a total code coverage of 100% given the small size of the Rails application.
+
+Submitting
+Deploying your finished app to Heroku by the assignment deadline is part of the grading process. Even if you have code checked in that works properly, you still need to also deploy it to Heroku to get full credit.
+
+Share access to your repository:
+
+On Github, go to your repository
+Click on Settings -> Collaborators & Teams
+Invite the course coordinator and tutor(s) to your repo (aufeef.chauhan@adelaide.edu.au, xiangyu.shi@adelaide.edu.au , and simon.kim@adelaide.edu.au ).
+Once you're confident the functionality works correctly on Heroku, submit the URI of your deployed Heroku app via the submission link in the top-right corner of this page.
+
+Before you finish
+Push your code to Github
+Invited the course staff to your repository.
+Check the code has been updated via the Github website
+Push your code to Heroku
+Check the Heroku server is performing as expected
+The Heroku database is populated with appropriate data to demonstrate your ability.
+Have a look at the rubric below and perform a self-evaluation on your code, checking that you feel you have completed the assessed items to your best ability. 
