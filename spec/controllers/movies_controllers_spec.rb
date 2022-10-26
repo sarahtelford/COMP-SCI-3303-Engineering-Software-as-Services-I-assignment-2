@@ -32,8 +32,9 @@ describe MoviesController do
 
 
   it 'Search movies by the same director' do
-    expect(Movie.new()).to receive(:similar_movies).with('Spirited Away')
-    get :search, { title: 'Spirited Away' }
+    get :search, {title: 'Spirited Away'}
+    expect(Movie.search()).to receive(:similar_movies).with('Spirited Away')
+
   end
 
   it 'Should redirect to home page if no director is known' do

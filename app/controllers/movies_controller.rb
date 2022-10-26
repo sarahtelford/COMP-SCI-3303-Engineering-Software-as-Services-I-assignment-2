@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
-    id = params[:id]
+    id = params.require(:id)
     @movie = Movie.find(id)
   end
 

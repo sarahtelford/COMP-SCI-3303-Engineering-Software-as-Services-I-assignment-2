@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-21T20:12:25+09:30">2022-05-21T20:12:25+09:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-06-08T20:44:01+09:30">2022-06-08T20:44:01+09:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -304,7 +304,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4d8efe1041202fa501288930d235276df20ca07c" class="src_link" title="spec/controllers/movies_controllers_spec.rb">spec/controllers/movies_controllers_spec.rb</a></td>
             <td class="yellow strong cell--number t-file__coverage">85.19 %</td>
-            <td class="cell--number">46</td>
+            <td class="cell--number">47</td>
             <td class="cell--number">27</td>
             <td class="cell--number">23</td>
             <td class="cell--number">4</td>
@@ -745,7 +745,7 @@
 
             
 
-            <code class="ruby">    id = params[:id]</code>
+            <code class="ruby">    id = params.require(:id)</code>
           </li>
         </div>
       
@@ -5017,7 +5017,7 @@
 
             
 
-            <code class="ruby">    expect(Movie.new()).to receive(:similar_movies).with(&#39;Spirited Away&#39;)</code>
+            <code class="ruby">    get :search, {title: &#39;Spirited Away&#39;}</code>
           </li>
         </div>
       
@@ -5028,7 +5028,7 @@
 
             
 
-            <code class="ruby">    get :search, { title: &#39;Spirited Away&#39; }</code>
+            <code class="ruby">    expect(Movie.search()).to receive(:similar_movies).with(&#39;Spirited Away&#39;)</code>
           </li>
         </div>
       
@@ -5039,7 +5039,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -5050,18 +5050,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="39">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="39">
+            
             
 
             
 
-            <code class="ruby">  it &#39;Should redirect to home page if no director is known&#39; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -5072,12 +5072,23 @@
 
             
 
+            <code class="ruby">  it &#39;Should redirect to home page if no director is known&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">    get :search, { title: &#39;No name&#39; }</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="41">
+          <li class="missed" data-hits="0" data-linenumber="42">
             
             
 
@@ -5088,7 +5099,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
@@ -5099,24 +5110,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="43">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="never" data-hits="" data-linenumber="44">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">end</code>
           </li>
         </div>
       
@@ -5133,6 +5133,17 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
